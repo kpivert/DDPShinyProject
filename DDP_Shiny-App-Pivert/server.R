@@ -79,4 +79,29 @@ shinyServer(function(input, output) {
                 model1()[[1]][2] 
                 
         })
+        
+        ## Create Model And Take Input for Prediction 
+        
+        model2 <- lm(dist ~ speed, data = cars)
+        
+        model2Pred <- reactive({
+                speedInput <- input$speed
+                predict(model2, newdata = data.frame(speed = speedInput))
+        })
+        
+        ## Output Plot with Point
+        
+        output$plot4 <- renderPlot({
+                plot(cars$speed, cars$dist, xlab = "Speed in MPH", 
+                     ylab = "Stopping Distance in Feet", cex = 2, 
+                     pch = 16, bty = "l", col = "gray")
+                points(input$speed, model2Pred(), col= "red", pch = 16, cex = 2)
+                
+        })
+        
+        ## Output predicted stopping distance 
+        
+        output$stoppingDist <- renderText({
+                model2Pred()
+        })
 })

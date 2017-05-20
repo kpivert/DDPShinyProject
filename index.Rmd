@@ -15,26 +15,25 @@ output: ioslides_presentation
         data("cars")
 ```
 
-## DDP: Shiny App Presentation
-### Kurtis Pivert 
-### May 20, 2017
+## DDP: Kurtis Pivert Shiny App Project  
 
-This presentation outlines the motivation for and function of the rudimentary 
+This presentation outlines the motivation for, and function of, the rudimentary 
 Shiny App developed for the Developing Data Products final project.  
 
-The Shiny App I created provides
+The Shiny App I created provides:
+
 - Brief Motivation and Outline for Using Simple Linear Regression
 - Basic App for Creating a Simple Linear Model Using Random Variables
- + This includes plot of random variables, regression line, and residual plots
 - Illustration of How Data Can Affect Regression Line 
+- Basic Illustration of How to Use Linear Models for Prediction 
 
-## Slide with Bullets
+## Why Should You Use the App? 
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- The interactivity provided by the Shiny App interface is pretty cool
+- The App illustrates the utility of using simple linear models for simple data sets
 
-## Slide with R Output
+
+## Plot of Simple Linear Model 
 ```{r Plot 1, echo=TRUE, message=FALSE, warning=FALSE}
         
 ggplotly(ggplot(cars, aes(x = speed, y = dist))+geom_point(color = "blue", alpha = 0.5)+
@@ -42,9 +41,7 @@ geom_smooth(method = "lm")+theme_bw(base_family = "Roboto")+xlab(label = "Speed 
 ylab(label = "Stopping Distance in Feet"))
 ```
 
-## Slide with Plot
+## Thanks for Your Review
 
-```{r Plot 2, echo=TRUE, message=FALSE, warning=FALSE}
-plot(pressure)
-```
-
+I welcome your comments and suggestions for improvement. Please email me at
+[kurtis.pivert@gmail.com](mailto:kurtis.pivert@gmail.com).
